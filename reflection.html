@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refleksi - EmoSync</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="reflection-container">
+        <!-- Header -->
+        <header class="reflection-header">
+            <div class="header-left">
+                <button onclick="goToDashboard()" class="back-btn">
+                    ← Dashboard
+                </button>
+                <div>
+                    <h1 class="page-title">🧠 Reflective Moments</h1>
+                    <p class="page-subtitle">Luangkan waktu untuk merefleksikan emosimu</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Reflection Content -->
+        <div class="reflection-card">
+            <!-- Progress -->
+            <div id="progressSection" class="progress-section">
+                <div class="progress-info">
+                    <span id="progressText">Pertanyaan 1 dari 8</span>
+                    <span id="progressPercent">12%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="reflectionContent">
+                <h3 class="section-title">💡 Pertanyaan Refleksi</h3>
+                <p class="section-description">Jawab dengan jujur dan terbuka. Tidak ada jawaban yang salah.</p>
+                
+                <div class="reflection-question">
+                    <h3 id="questionText">Loading...</h3>
+                </div>
+
+                <textarea id="reflectionAnswer" placeholder="Tulis refleksimu di sini... Ekspresikan perasaan dan pikiranmu dengan bebas." rows="6" class="reflection-textarea"></textarea>
+
+                <div class="reflection-actions">
+                    <button onclick="saveReflection()" class="action-btn btn-primary-action" id="saveBtn" disabled>
+                        💾 Simpan & Lanjut
+                    </button>
+                    <button onclick="skipQuestion()" class="action-btn btn-secondary-action">Lewati</button>
+                </div>
+
+                <div class="reflection-tip">
+                    <p>💡 Refleksi membantu kamu memahami dan memproses emosi dengan lebih baik</p>
+                </div>
+            </div>
+
+            <!-- Completion -->
+            <div id="completionContent" style="display: none; text-align: center;">
+                <div class="completion-icon">❤️</div>
+                <h2 class="section-title">Terima Kasih!</h2>
+                <p class="section-description">Kamu telah menyelesaikan sesi refleksi. Ini adalah langkah penting dalam perjalanan kesehatan mentalmu.</p>
+                
+                <div class="benefits-box">
+                    <h3>Manfaat Refleksi</h3>
+                    <ul>
+                        <li>• Meningkatkan kesadaran diri</li>
+                        <li>• Membantu memproses emosi</li>
+                        <li>• Mengembangkan strategi coping</li>
+                        <li>• Mengurangi stres dan kecemasan</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-actions">
+                    <button onclick="startNewReflection()" class="action-btn btn-primary-action">
+                        🧠 Refleksi Lagi
+                    </button>
+                    <button onclick="goToDashboard()" class="action-btn btn-secondary-action">
+                        Kembali ke Dashboard
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="reflection-card">
+            <h3 class="section-title">💡 Tips Refleksi</h3>
+            <ul class="tips-list">
+                <li>Jawab dengan jujur, tanpa menghakimi diri sendiri</li>
+                <li>Tidak ada jawaban yang benar atau salah</li>
+                <li>Fokus pada perasaan dan pengalaman pribadi</li>
+                <li>Ambil waktu yang kamu butuhkan untuk berpikir</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/reflection.js"></script>
+</body>
+</html>

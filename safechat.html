@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Chat - EmoSync</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="safechat-container">
+        <!-- Header -->
+        <header class="safechat-header">
+            <div class="header-left">
+                <button onclick="goToDashboard()" class="back-btn">
+                    ← Dashboard
+                </button>
+                <div>
+                    <h1 class="page-title">🛡️ Safe Chat</h1>
+                    <p class="page-subtitle">Ruang aman untuk berbagi perasaan</p>
+                </div>
+            </div>
+            <button onclick="clearChat()" class="clear-btn">Bersihkan Chat</button>
+        </header>
+
+        <!-- Privacy Notice -->
+        <div class="privacy-notice">
+            <span class="notice-icon">🛡️</span>
+            <div class="notice-content">
+                <h3>Ruang Privat & Aman</h3>
+                <p>Semua percakapan disimpan secara lokal di perangkat Anda dan tidak dibagikan ke server manapun.</p>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-card">
+            <div class="chat-header">
+                <h3 class="section-title">❤️ Ruang Curhat</h3>
+                <p class="section-description">Ekspresikan perasaanmu dengan bebas. Kamu tidak sendirian.</p>
+            </div>
+
+            <!-- Messages -->
+            <div id="messagesContainer" class="chat-messages">
+                <div class="empty-state">
+                    <div class="empty-icon">💬</div>
+                    <p>Mulai percakapan dengan mengetik pesan di bawah...</p>
+                </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="chat-input-container">
+                <div class="chat-input">
+                    <textarea id="messageInput" placeholder="Ketik perasaanmu di sini..." class="message-input" rows="1"></textarea>
+                    <button onclick="sendMessage()" class="send-btn" id="sendBtn" disabled>
+                        ➤
+                    </button>
+                </div>
+            </div>        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/safechat.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EmoSync</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <h2 class="register-title">📝 Daftar ke EmoSync</h2>
+            <p class="register-subtitle">Buat akun baru untuk memulai perjalanan emosi Anda</p>
+            <form id="registerForm" class="register-form">
+                <input type="text" id="registerUsername" placeholder="Username" required class="form-input">
+                <input type="email" id="registerEmail" placeholder="Email" required class="form-input">
+                <input type="password" id="registerPassword" placeholder="Password" required class="form-input">
+                <button type="submit" class="register-btn">Register</button>
+            </form>
+            <p class="register-link">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+            <div id="registerError" class="error-message" style="display: none;"></div>
+            <div id="registerSuccess" class="success-message" style="display: none;">
+                Registrasi berhasil! Anda akan diarahkan ke halaman login...
+            </div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmoSync - Sinkronisasi Emosi</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="emotion-container">
+        <!-- Header -->
+        <header class="emotion-header">
+            <h1 class="app-title">
+                <span>❤️</span>
+                <span>EmoSync</span>
+            </h1>
+            <p class="app-subtitle">Sinkronisasi Emosi - Kenali dan Kelola Emosimu</p>
+            <div class="header-actions">
+                <button onclick="window.location.href='login.html'" class="header-btn" id="loginBtn">Login</button>
+                <button onclick="window.location.href='register.html'" class="header-btn" id="registerBtn">Register</button>                <div class="user-menu" id="userMenu" style="display:none;">
+                    <button onclick="goToDashboard()" class="header-btn dashboard-btn">📊 Dashboard</button>
+                    <button onclick="handleLogout()" class="header-btn logout-btn">🚪 Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Name Input Section -->
+        <div id="nameSection" class="emotion-main-card" style="display: none;">
+            <h2 class="welcome-title">🌟 Selamat Datang di EmoSync!</h2>
+            <p class="section-description">Masukkan nama Anda untuk memulai perjalanan emosional</p>
+            <div class="name-input-group">
+                <input type="text" id="nameInput" placeholder="Nama Anda" class="name-input">
+                <button onclick="saveName()" class="start-btn">Mulai</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="mainContent" style="display: none;">
+            <!-- Emotion Selection -->
+            <div class="emotion-main-card">
+                <h2 id="welcomeText" class="welcome-title">Halo! Bagaimana perasaanmu hari ini?</h2>
+                <p class="section-description">Pilih emoji yang paling menggambarkan perasaanmu saat ini</p>
+                
+                <div class="emotion-grid" id="emotionGrid">
+                    <!-- Emotions will be populated by JavaScript -->
+                </div>
+                
+                <!-- Intensity Slider dalam card yang sama -->
+                <div id="intensitySection" style="display: none; margin-top: 25px; padding-top: 25px; border-top: 2px solid #f1f5f9;">
+                    <h3 class="section-title">Intensitas Emosi</h3>
+                    <p class="section-description">Seberapa kuat perasaan ini? (1 = Sangat Lemah, 10 = Sangat Kuat)</p>
+                    <div class="slider-container">
+                        <input type="range" id="intensitySlider" min="1" max="10" value="5" class="slider">
+                        <div class="slider-value">
+                            <span id="intensityValue">5</span>
+                            <span> / 10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Note dalam card yang sama -->
+                <div id="noteSection" style="display: none; margin-top: 25px; padding-top: 25px; border-top: 2px solid #f1f5f9;">
+                    <h3 class="section-title">Catatan Emosi (Opsional)</h3>
+                    <p class="section-description">Ceritakan lebih detail tentang perasaanmu</p>
+                    <textarea id="emotionNote" placeholder="Apa yang membuatmu merasa seperti ini? Ceritakan di sini..." rows="3" class="emotion-textarea"></textarea>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="saveEmotionBtn" onclick="saveEmotion()" class="action-btn btn-primary-action" disabled>
+                    ❤️ Simpan Emosi
+                </button>
+                <button onclick="goToDashboard()" class="action-btn btn-secondary-action">
+                    📊 Lihat Dashboard
+                </button>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="quick-nav">
+                <button onclick="goToQuiz()" class="nav-btn">
+                    <span class="nav-icon">❓</span>
+                    <span class="nav-text">Kuis Emosi</span>
+                </button>
+                <button onclick="goToSafeChat()" class="nav-btn">
+                    <span class="nav-icon">💬</span>
+                    <span class="nav-text">Safe Chat</span>
+                </button>
+                <button onclick="goToReport()" class="nav-btn">
+                    <span class="nav-icon">📄</span>
+                    <span class="nav-text">Laporan</span>
+                </button>
+                <button onclick="goToReflection()" class="nav-btn">
+                    <span class="nav-icon">🧠</span>
+                    <span class="nav-text">Refleksi</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

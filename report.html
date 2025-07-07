@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan - EmoSync</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="report-container">
+        <!-- Header -->
+        <header class="report-header">
+            <div class="header-left">
+                <button onclick="goToDashboard()" class="back-btn">
+                    ← Dashboard
+                </button>
+                <div>
+                    <h1 class="page-title">📊 Laporan Emosi</h1>
+                    <p class="page-subtitle">Analisis dan unduh rekap emosi Anda</p>
+                </div>
+            </div>
+            <button onclick="downloadReport()" class="download-btn" id="downloadBtn" disabled>
+                📥 Unduh Laporan
+            </button>
+        </header>
+
+        <!-- Period Selection -->
+        <div class="report-card">
+            <h3 class="section-title">📅 Periode Laporan</h3>
+            <p class="section-description">Pilih rentang waktu untuk analisis emosi</p>
+            <select id="periodSelect" class="period-select" onchange="changePeriod()">
+                <option value="weekly">7 Hari Terakhir</option>
+                <option value="monthly">30 Hari Terakhir</option>
+                <option value="yearly">1 Tahun Terakhir</option>
+            </select>
+        </div>
+
+        <!-- Summary Stats -->
+        <div id="statsSection" class="stats-grid">
+            <!-- Stats will be populated by JavaScript -->
+        </div>
+
+        <!-- Emotion Breakdown -->
+        <div id="breakdownSection" class="report-card">
+            <h3 class="section-title">📈 Distribusi Emosi</h3>
+            <p class="section-description">Breakdown emosi dalam periode yang dipilih</p>
+            <div id="emotionBreakdown" class="emotion-breakdown">
+                <!-- Breakdown will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Recent Entries -->
+        <div id="entriesSection" class="report-card">
+            <h3 class="section-title">📝 Entri Terbaru</h3>
+            <p class="section-description">10 entri emosi terakhir dalam periode ini</p>
+            <div id="recentEntries" class="recent-entries">
+                <!-- Entries will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- No Data State -->
+        <div id="noDataSection" class="report-card" style="display: none;">
+            <div class="no-data-section">
+                <div class="no-data-icon">📊</div>
+                <h3 class="no-data-title">Belum Ada Data</h3>
+                <p class="no-data-description">Tidak ada data emosi dalam periode yang dipilih.</p>
+                <p class="no-data-description" style="font-size: 0.9rem;">Mulai mencatat emosi untuk melihat laporan.</p>
+                <button onclick="goToHome()" class="no-data-btn">
+                    Tambah Emosi Pertama
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/report.js"></script>
+</body>
+</html>

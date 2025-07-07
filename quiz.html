@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Emosi - EmoSync</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Header -->
+        <div class="quiz-header">
+            <button onclick="goToDashboard()" class="back-button">
+                <span>←</span>
+                <span>Kembali ke Dashboard</span>
+            </button>
+            <h1 class="quiz-title">🧠 Kuis Emosi</h1>
+            <p class="quiz-subtitle">Uji pemahaman Anda tentang manajemen emosi</p>
+        </div>
+
+        <!-- Progress -->
+        <div id="progressSection" class="progress-container">
+            <div class="progress-info">
+                <span id="progressText" class="progress-text">Pertanyaan 1 dari 5</span>
+                <span id="progressPercent" class="progress-percent">20%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill" style="width: 20%;"></div>
+            </div>
+        </div>
+
+        <!-- Quiz Content -->
+        <div id="quizContent" class="quiz-card">
+            <h3 id="questionText" class="question-text">Loading...</h3>
+            <div id="optionsContainer" class="quiz-options">
+                <!-- Options will be populated by JavaScript -->
+            </div>
+            <div class="quiz-actions">
+                <button id="nextBtn" onclick="handleNext()" class="next-button" disabled>
+                    Pertanyaan Selanjutnya
+                </button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsContent" class="results-card" style="display: none;">
+            <h2 class="results-title">🎉 Kuis Selesai!</h2>
+            <p class="results-subtitle">Berikut adalah hasil kuis emosi Anda</p>
+            
+            <div id="scoreDisplay" class="score-display">
+                <div id="scoreNumber" class="score-number">0/5</div>
+                <div id="scorePercentage" class="score-percentage">Skor: 0%</div>
+            </div>
+            
+            <div id="scoreMessage" class="score-message">
+                <!-- Message will be populated by JavaScript -->
+            </div>
+
+            <div class="results-actions">
+                <button onclick="resetQuiz()" class="action-button btn-primary-action">
+                    🔄 Ulangi Kuis
+                </button>
+                <button onclick="goToDashboard()" class="action-button btn-secondary-action">
+                    📊 Kembali ke Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>
