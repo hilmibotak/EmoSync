@@ -22,23 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function initializeApp() {
-  // Check if user is logged in and get their name
-  const currentUser = localStorage.getItem("currentUser")
   const storedName = localStorage.getItem("userName")
-  
-  // Hide login/register buttons and show user menu if user is logged in
-  updateHeaderButtons(currentUser, storedName)
-  
-  if (currentUser && storedName) {
-    // User is logged in, use their username
-    userName = storedName
-    showMainContent()
-  } else if (storedName) {
-    // Fallback to stored name (for backward compatibility)
+  if (storedName) {
     userName = storedName
     showMainContent()
   } else {
-    // No user logged in and no stored name, show name input
     showNameSection()
   }
 
@@ -47,24 +35,6 @@ function initializeApp() {
 
   // Initialize intensity slider
   initializeIntensitySlider()
-}
-
-function updateHeaderButtons(currentUser, userName) {
-  const loginBtn = document.getElementById("loginBtn")
-  const registerBtn = document.getElementById("registerBtn")
-  const userMenu = document.getElementById("userMenu")
-  
-  if (currentUser && userName) {
-    // User is logged in - hide login/register, show user menu
-    loginBtn.style.display = "none"
-    registerBtn.style.display = "none"
-    userMenu.style.display = "flex"
-  } else {
-    // User not logged in - show login/register, hide user menu
-    loginBtn.style.display = "inline-block"
-    registerBtn.style.display = "inline-block"
-    userMenu.style.display = "none"
-  }
 }
 
 function showNameSection() {
@@ -186,13 +156,4 @@ function goToReflection() {
 
 function goToHome() {
   window.location.href = 'index.html';
-}
-
-function handleLogout() {
-  // Clear user data
-  localStorage.removeItem("currentUser")
-  localStorage.removeItem("userName")
-  
-  // Redirect to login page
-  window.location.href = "login.html"
 }

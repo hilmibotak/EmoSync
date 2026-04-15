@@ -10,20 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function initializeDashboard() {
   // Load data from localStorage
   emotions = JSON.parse(localStorage.getItem("emotions") || "[]")
-  
-  // Get username from currentUser or userName
-  const currentUser = localStorage.getItem("currentUser")
   const storedUserName = localStorage.getItem("userName")
-  
-  if (currentUser) {
-    userName = storedUserName || currentUser
-    // Ensure userName is set if currentUser exists
-    if (!storedUserName) {
-      localStorage.setItem("userName", currentUser)
-    }
-  } else {
-    userName = storedUserName || "Pengguna"
-  }
+  userName = storedUserName || "Pengguna"
 
   // Update welcome message
   document.getElementById("welcomeBack").textContent = `Selamat datang kembali, ${userName}!`
